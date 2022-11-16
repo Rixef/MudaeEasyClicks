@@ -1,14 +1,14 @@
 //global variables
   //read-only hardcode variables
-    const rndsidarr = [0,1,2,3,4,5,6,7,8,9,"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-    const botid = "432610292342587392";//432610292342587392 = Mudae Bot Application User ID
+    const rndsidarr = [0,1,2,3,4,5,6,7,8,9,"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];//this will never need to be updated as it's just used in the random session id generation function
+    const botid = "432610292342587392";//432610292342587392 = Mudae Bot Application User ID(this will probably never change but in case it does, you can get it through Discord Developer mode and then right click Mudae and copy id)
     const claimtu = 10800000;//3hrs = 10800000
   //completely dynamic variables that the user doesn't touch at all
-    var channelid = document.location.href.split('/')[5];
-    var guildid = document.location.href.split('/')[4];
-    var guildname = document.querySelector("div.lineClamp1-1iDPU7.text-md-semibold-3xVVGu.name-3Uvkvr").innerText;
+    var channelid = document.location.href.split('/')[5];//gets channel id from the url
+    var guildid = document.location.href.split('/')[4];//gets guild/server id from the url
+    var guildname = document.querySelector("div.lineClamp1-1iDPU7.text-md-semibold-3xVVGu.name-3Uvkvr").innerText;//gets guild name from top left corner
     var highestkakerarollvalue = 0;
-    var hkvmsgid = "";
+    var hkvmsgid = "";//storage variable for highest kakera value message id to react on and claim
   //dynamic variables that are changed by the user
     var guildspecificrolls = {"The Worst Generation":8,"ev's crib":8,"Rixef's server":10};//add your favorite servers w/mudae rolls #
     var rolls = 8;//change in console with rolls = newValue;
