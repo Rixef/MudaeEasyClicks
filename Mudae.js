@@ -40,12 +40,18 @@ async function mr()
 //additional buttons and other UI functions for easy click rolls and etc.
   var asection = document.querySelector("section.panels-3wFtMD");
   asection.innerHTML+=
-  //Mudae Roll button - rolls default 8 times default /wa
-  "<button role=\"button\" type=\"button\" class=\"component-ifCTxY button-f2h6uQ lookFilled-yCfaCM colorBrand-I6CyqQ sizeSmall-wU2dO- grow-2sR_-F mudaerollbtn\"><div class=\"contents-3ca1mk\"><div class=\"content-1xP6ZE\" aria-hidden=\"false\"><div class=\"label-31sIdr\">Mudae Roll</div></div></div></button>"+
-  //wa button - sends /wa one time(look ma! No typing)
-  "<button role=\"button\" type=\"button\" class=\"component-ifCTxY button-f2h6uQ lookFilled-yCfaCM colorBrand-I6CyqQ sizeSmall-wU2dO- grow-2sR_-F wabtn\"><div class=\"contents-3ca1mk\"><div class=\"content-1xP6ZE\" aria-hidden=\"false\"><div class=\"label-31sIdr\">wa</div></div></div></button>"+
-  //dk button - sends /dk one time(look ma! No typing)
-  "<button role=\"button\" type=\"button\" class=\"component-ifCTxY button-f2h6uQ lookFilled-yCfaCM colorBrand-I6CyqQ sizeSmall-wU2dO- grow-2sR_-F dkbtn\"><div class=\"contents-3ca1mk\"><div class=\"content-1xP6ZE\" aria-hidden=\"false\"><div class=\"label-31sIdr\">dk</div></div></div></button>";
+  //container for the added UI features
+  "<div class=\"container-3nKPGI\">"+
+  "<div class=\"children-2XdE_I\">"+
+    //Mudae Roll button - rolls default 8 times default /wa
+    "<button role=\"button\" type=\"button\" class=\"component-ifCTxY button-f2h6uQ lookFilled-yCfaCM colorBrand-I6CyqQ sizeSmall-wU2dO- grow-2sR_-F mudaerollbtn\"><div class=\"contents-3ca1mk\"><div class=\"content-1xP6ZE\" aria-hidden=\"false\"><div class=\"label-31sIdr\">Mudae Roll</div></div></div></button>"+
+    //wa button - sends /wa one time(look ma! No typing)
+    "<button role=\"button\" type=\"button\" class=\"component-ifCTxY button-f2h6uQ lookFilled-yCfaCM colorBrand-I6CyqQ sizeSmall-wU2dO- grow-2sR_-F wabtn\"><div class=\"contents-3ca1mk\"><div class=\"content-1xP6ZE\" aria-hidden=\"false\"><div class=\"label-31sIdr\">wa</div></div></div></button>"+
+    //dk button - sends /dk one time(look ma! No typing)
+    "<button role=\"button\" type=\"button\" class=\"component-ifCTxY button-f2h6uQ lookFilled-yCfaCM colorBrand-I6CyqQ sizeSmall-wU2dO- grow-2sR_-F dkbtn\"><div class=\"contents-3ca1mk\"><div class=\"content-1xP6ZE\" aria-hidden=\"false\"><div class=\"label-31sIdr\">dk</div></div></div></button>"+
+  //end container for added UI features
+  "</div>"+
+  "</div>";
   var asecbtn = asection.querySelector("button.component-ifCTxY.button-f2h6uQ.lookFilled-yCfaCM.colorBrand-I6CyqQ.sizeSmall-wU2dO-.grow-2sR_-F.mudaerollbtn");
   asecbtn.onclick=async ()=>{mr();};
   asecbtn = asection.querySelector("button.component-ifCTxY.button-f2h6uQ.lookFilled-yCfaCM.colorBrand-I6CyqQ.sizeSmall-wU2dO-.grow-2sR_-F.wabtn");
@@ -55,14 +61,14 @@ async function mr()
 //get channelid, guildid, and guildname, and update rolls accordingly
 setInterval(function updatecgid()
 {
-  if(channelid!=document.location.href.split('/')[5])//if channel id changes
-    channelid=document.location.href.split('/')[5];//update channelid
-  if(guildid!=document.location.href.split('/')[4])//if guild id changes
-    guildid=document.location.href.split('/')[4];//update guild id
-  if(guildname!=document.querySelector("div.lineClamp1-1iDPU7.text-md-semibold-3xVVGu.name-3Uvkvr").innerText)//if guild name changes
-    guildname=document.querySelector("div.lineClamp1-1iDPU7.text-md-semibold-3xVVGu.name-3Uvkvr").innerText;//update guildname
-  if(Object.keys(guildspecificrolls).includes(guildname))//if guildname is different
-      rolls=guildspecificrolls[guildname];//update rolls
+  if(channelid!=document.location.href.split('/')[5])
+    channelid=document.location.href.split('/')[5];
+  if(guildid!=document.location.href.split('/')[4])
+    guildid=document.location.href.split('/')[4];
+  if(guildname!=document.querySelector("div.lineClamp1-1iDPU7.text-md-semibold-3xVVGu.name-3Uvkvr").innerText)
+    guildname=document.querySelector("div.lineClamp1-1iDPU7.text-md-semibold-3xVVGu.name-3Uvkvr").innerText;
+  if(Object.keys(guildspecificrolls).includes(guildname))
+      rolls=guildspecificrolls[guildname];
 },1000);
 
 //get token
