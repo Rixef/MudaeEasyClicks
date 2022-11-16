@@ -55,20 +55,20 @@ async function mr()
 //get channelid, guildid, and guildname, and update rolls accordingly
 setInterval(function updatecgid()
 {
-  if(channelid!=document.location.href.split('/')[5])
-    channelid=document.location.href.split('/')[5];
-  if(guildid!=document.location.href.split('/')[4])
-    guildid=document.location.href.split('/')[4];
-  if(guildname!=document.querySelector("div.lineClamp1-1iDPU7.text-md-semibold-3xVVGu.name-3Uvkvr").innerText)
-    guildname=document.querySelector("div.lineClamp1-1iDPU7.text-md-semibold-3xVVGu.name-3Uvkvr").innerText;
-  if(Object.keys(guildspecificrolls).includes(guildname))
-      rolls=guildspecificrolls[guildname];
+  if(channelid!=document.location.href.split('/')[5])//if channel id changes
+    channelid=document.location.href.split('/')[5];//update channelid
+  if(guildid!=document.location.href.split('/')[4])//if guild id changes
+    guildid=document.location.href.split('/')[4];//update guild id
+  if(guildname!=document.querySelector("div.lineClamp1-1iDPU7.text-md-semibold-3xVVGu.name-3Uvkvr").innerText)//if guild name changes
+    guildname=document.querySelector("div.lineClamp1-1iDPU7.text-md-semibold-3xVVGu.name-3Uvkvr").innerText;//update guildname
+  if(Object.keys(guildspecificrolls).includes(guildname))//if guildname is different
+      rolls=guildspecificrolls[guildname];//update rolls
 },1000);
 
 //get token
 function GT() {	return (webpackChunkdiscord_app.push([[''],{},e=>{m=[];for(let c in e.c)m.push(e.c[c])}]),m).find(m=>m?.exports?.default?.getToken!==void 0).exports.default.getToken(); };
 
-//random sid generator:
+//random sid generator(random session id generator):
 function rndgensid()
 {
 	var rndgensid = "";
@@ -88,7 +88,7 @@ function wa()
 {
   var token = GT();
   var rgsid = rndgensid();
-  var rnd = Math.floor((Math.random()*959223404165070848));
+  var rnd = Math.floor((Math.random()*959223404165070848));//used for nonce
   //sends /wa command fetch
   fetch("https://discord.com/api/v9/interactions",
   {
@@ -122,7 +122,7 @@ function dk()
 {
   var token = GT();
   var rgsid = rndgensid();
-  var rnd = Math.floor((Math.random()*959223404165070848));
+  var rnd = Math.floor((Math.random()*959223404165070848));//used for nonce
   //sends /dk command fetch
   fetch("https://discord.com/api/v9/interactions",
   {
