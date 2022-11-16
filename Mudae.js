@@ -212,4 +212,4 @@ function remreact()
 }
 
 //code to execute
-setInterval(f(),claimtu);//execute it every claimtu time after that
+//setInterval(f(),claimtu);//execute it every claimtu time after that (this for some reason doesn't seem to be working right now so commenting it out for the time being)
